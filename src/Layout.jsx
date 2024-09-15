@@ -1,9 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function Layout() {
   return (
     <>
-      <div className="header">
+      <div className="bg-black header">
         <nav>
           <ul>
             <li>
@@ -19,7 +20,7 @@ export default function Layout() {
         </nav>
       </div>
       <Outlet />
-      <div className="footer">Footer</div>
+      <Footer />
     </>
   );
 }
