@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Colors from SheCodes Color Palette to be found on: https://palettes.shecodes.io/palettes/1448 */
+html {
+  background: #f8f9fa;
+  color: #000;
+}
