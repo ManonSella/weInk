@@ -21,8 +21,16 @@ export default function Search() {
     e.preventDefault();
     setErrorMessage("");
 
-    if (listOfBreeds.includes(dogBreed)) {
-      const apiUrlByBreed = `https://dog.ceo/api/breed/${dogBreed}/images/random/10`;
+    // Sanitize
+    const search = dogBreed.toLowerCase().trim();
+
+    setImageUrls([]);
+
+    // Stop here if we are searching for nothing
+    if (search.length === 0) return;
+
+    if (listOfBreeds.includes(search)) {
+      const apiUrlByBreed = `https://dog.ceo/api/breed/${search}/images/random/9`;
       fetch(apiUrlByBreed)
         .then((response) => response.json())
         .then((json) => setImageUrls(json.message));
@@ -32,10 +40,25 @@ export default function Search() {
   };
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="search-dog-breed">Search images by dog breed: </label>
+    <div className="search">
+      <h1 className="font-bold mb-2 text-4xl">Search for your favorite dog</h1>
+      <p className="text-xl mb-8">
+        …or discover new breeds among the hundreds of existing ones around the
+        world.
+      </p>
+
+      <form
+        className="flex flex-col lg:flex-row mx-auto mb-8 w-4/5"
+        onSubmit={onSubmit}
+      >
+        <label
+          className="lg:bg-white lg:border-2 py-4 lg:px-2 lg:rounded-l-lg"
+          htmlFor="search-dog-breed"
+        >
+          Search images by dog breed:
+        </label>
         <input
+          className="flex-1 p-2 border-2 lg:border-l-0 rounded-lg lg:rounded-none lg:rounded-r-lg lg:mr-4 mb-4 lg:mb-0"
           id="search-dog-breed"
           list="breeds-list"
           disabled={isInputDisabled}
@@ -43,17 +66,29 @@ export default function Search() {
           value={dogBreed}
           onChange={(event) => setDogBreed(event.target.value)}
         />
-        {errorMessage ? <p>{errorMessage}</p> : null}
         <datalist id="breeds-list">
           {listOfBreeds.map((breed, index) => {
             return <option key={index} value={breed}></option>;
           })}
         </datalist>
-        <button type="submit">Search</button>
+        <button className="bg-blue-900 rounded-lg p-4 text-white" type="submit">
+          🔍 &nbsp;Search
+        </button>
       </form>
-      {imageUrls.map((imageUrl, index) => (
-        <img key={index} src={imageUrl} />
-      ))}
-    </>
+
+      {errorMessage ? (
+        <p className="text-red-500 text-center">{errorMessage}</p>
+      ) : null}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
+        {imageUrls.map((imageUrl, index) => (
+          <img
+            className="object-cover rounded-xl size-full"
+            key={index}
+            src={imageUrl}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
