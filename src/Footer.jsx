@@ -1,26 +1,38 @@
-import { FaFacebook, FaInstagram, FaLine } from "react-icons/fa";
-import { IoLogoWechat } from "react-icons/io5";
+import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+// icons imported from: https://react-icons.github.io/react-icons/
 
 export default function Footer() {
   return (
-    <div className="flex flex-col max-w-full px-2 py-4 mx-auto justify-between sm:flex-row text-center text-gray-500">
-      <a href="https://github.com/ManonSella">
-        <p className="text-black py-4">2024 Manon Sella</p>
-      </a>
-      <div className="flex justify-between sm:w-[300px] pt-4 text-2xl">
-        <a href="https://www.facebook.com">
-          <FaFacebook fill="black" />
-        </a>{" "}
-        <a href="https://www.instagram.com">
-          <FaInstagram fill="white" />
+    <footer className="bg-blue-900 text-white">
+      <div className="max-w-[1024px] p-8 mx-auto flex flex-col lg:flex-row lg:justify-between text-center">
+        <a className="mb-4 lg:mb-0" href="https://github.com/ManonSella">
+          ©2024 Manon Sella
         </a>
-        <a href="https://www.line.com">
-          <FaLine fill="white" />
-        </a>
-        <a href="https://www.wechat.com">
-          <IoLogoWechat fill="white" />
-        </a>
+
+        <ul className="flex justify-around text-2xl lg:gap-4">
+          <li>
+            <a href="https://www.tiktok.com">
+              <FaTiktok />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com">
+              <FaInstagram />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitter.com">
+              <FaXTwitter />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com">
+              <FaFacebook />
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
+    </footer>
   );
 }
