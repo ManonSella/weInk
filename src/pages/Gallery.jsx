@@ -12,10 +12,23 @@ export default function Gallery() {
 
   return (
     <div className="gallery">
-      Hello from gallery
-      {imageUrls.map((imageUrl, index) => (
-        <img key={index} src={imageUrl} />
-      ))}
+      <h1 className="font-bold mb-2 text-4xl">
+        Dog pictures to brighten your day
+      </h1>
+      <p className="text-xl mb-8">
+        Here are some random dog images to increase your daily dose of
+        serotonin.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
+        {imageUrls.map((imageUrl, index) => (
+          <img
+            className="object-cover rounded-xl size-full"
+            key={index}
+            src={imageUrl}
+          />
+        ))}
+      </div>
     </div>
   );
 }
