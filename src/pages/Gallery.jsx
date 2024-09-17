@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// Importing useEffect and useState hooks from React
 
 export default function Gallery() {
   const [imageUrls, setImageUrls] = useState([]);

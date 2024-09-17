@@ -32,10 +32,10 @@ export default function Home() {
         for you can be a little bit daunting. We have you covered! Here is a
         list of dog breeds to show you which type of dog could be your perfect
         pet! Browse your favorite dog breeds below and find your potential new
-        canine friend!{" "}
+        canine friend!
       </p>
       <p className="text-xl leading-relaxed text-center italic">
-        Please, consider adopting from a shelter if you can. ❤️{" "}
+        Please, consider adopting from a shelter if you can. ❤️
       </p>
     </div>
   );
