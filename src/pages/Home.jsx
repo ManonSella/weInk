@@ -35,7 +35,7 @@ export default function Home() {
         canine friend!{" "}
       </p>
       <p className="text-xl leading-relaxed text-center italic">
-        Please, consider adopting from a shelter around you if you can. ❤️{" "}
+        Please, consider adopting from a shelter if you can. ❤️{" "}
       </p>
     </div>
   );

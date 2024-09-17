@@ -14,7 +14,7 @@ export default function Gallery() {
   }, []);
 
   return (
-    <div className="gallery">
+    <div className="text-center gallery">
       <h1 className="font-bold mb-2 text-4xl">
         Dog pictures to brighten your day
       </h1>
