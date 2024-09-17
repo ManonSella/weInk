@@ -83,7 +83,7 @@ export default function Search() {
           })}
         </datalist>
         <button
-          className="bg-[#1e6262] hover:bg-[#f5e1da] transition ease-in-out delay-150 border border-teal-800 rounded-lg p-4 hover:text-teal-800 text-white"
+          className="bg-[#1e6262] hover:bg-[#f5e1da] transition ease-in-out delay-150 border border-teal-800 rounded-3xl py-4 px-5 hover:text-teal-800 text-white"
           type="submit"
         >
           {/*&nbsp = non-breaking space character in HTML*/}
