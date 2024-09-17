@@ -35,14 +35,16 @@ export default function Search() {
         .then((response) => response.json())
         .then((json) => setImageUrls(json.message));
     } else {
-      setErrorMessage("This breed does not exist");
+      setErrorMessage("Sorry! This breed does not exist.");
     }
   };
 
   return (
     <div className="search">
-      <h1 className="font-bold mb-2 text-4xl">Search for your favorite dog</h1>
-      <p className="text-xl mb-8">
+      <h1 className="text-center font-bold mb-2 text-4xl">
+        Search for your favorite dog
+      </h1>
+      <p className="text-center text-xl mb-8">
         …or discover new breeds among the hundreds of existing ones around the
         world.
       </p>
@@ -52,7 +54,7 @@ export default function Search() {
         onSubmit={onSubmit}
       >
         <label
-          className="lg:bg-white lg:border-2 py-4 lg:px-2 lg:rounded-l-lg"
+          className="font-medium lg:bg-white lg:border-2 py-4 lg:px-2 lg:rounded-l-lg"
           htmlFor="search-dog-breed"
         >
           Search images by dog breed:
@@ -71,7 +73,10 @@ export default function Search() {
             return <option key={index} value={breed}></option>;
           })}
         </datalist>
-        <button className="bg-blue-900 rounded-lg p-4 text-white" type="submit">
+        <button
+          className="bg-[#1e6262] hover:bg-[#f5e1da] transition ease-in-out delay-150 border border-teal-800 rounded-lg p-4 hover:text-teal-800 text-white"
+          type="submit"
+        >
           🔍 &nbsp;Search
         </button>
       </form>
